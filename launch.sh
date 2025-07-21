@@ -49,6 +49,6 @@ echo "Launching $game_name..."
 if [ $game_name == "wordle" ]; then
     python ./games/wordle.py
 elif [ $game_name == "hangman" ]; then
-    echo "Not yet implemented... Play wordle?"
-    # python ./games/hangman.py
+    # echo "Not yet implemented... Play wordle?"
+    python ./games/hangman.py
 fi
