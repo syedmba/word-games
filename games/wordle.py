@@ -111,7 +111,7 @@ class Wordle:
                 if len(player_guess) != len(self.word):
                     print(f"Your guess has to be {len(self.word)} letters long !")
                     player_guess = input("Enter Guess: ")
-                elif player_guess not in WORD_DICT:
+                elif player_guess.lower() not in WORD_DICT:
                     print(f"Not a valid word !")
                     player_guess = input("Enter Guess: ")
                 else:
