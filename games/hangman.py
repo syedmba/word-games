@@ -4,14 +4,17 @@ from enum import Enum
 
 from utils.bcolors import bcolors
 
-from global_vars import LOG_LEVEL
+from global_vars import LOG_LEVEL, LOG_DIR
 from utils.key_state import KeyState
 
 import logging
 
 logger = logging.getLogger(__name__)
 
-logging.basicConfig(filename='hangman.log', level=LOG_LEVEL)
+logging_dir = LOG_DIR + '/hangman.log'
+logging.basicConfig(filename=logging_dir,
+                    level=LOG_LEVEL,
+                    format='[%(asctime)s][%(levelname)s][%(filename)s] %(message)s')
 
 
 with open('words_dictionary.json') as file:

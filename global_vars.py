@@ -18,3 +18,5 @@ elif log_level == "CRITICAL":
 else:
     LOG_LEVEL = logging.NOTSET
 
+
+LOG_DIR = os.environ.get("LOG_DIR", "")
