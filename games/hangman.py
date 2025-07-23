@@ -11,7 +11,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-logging.basicConfig(filename='wordle.log', level=LOG_LEVEL)
+logging.basicConfig(filename='hangman.log', level=LOG_LEVEL)
 
 
 with open('words_dictionary.json') as file:
