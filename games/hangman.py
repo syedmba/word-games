@@ -5,7 +5,7 @@ from enum import Enum
 from utils.bcolors import bcolors
 
 from global_vars import LOG_LEVEL
-from wordle import KeyState
+from utils.key_state import KeyState
 
 import logging
 

@@ -1,10 +1,11 @@
 import random
 import json
-from enum import Enum
 
 from utils.bcolors import bcolors
 
 from global_vars import LOG_LEVEL
+
+from utils.key_state import KeyState
 
 import logging
 
@@ -15,13 +16,6 @@ logging.basicConfig(filename='wordle.log', level=LOG_LEVEL)
 
 with open('words_dictionary.json') as file:
         WORD_DICT = json.load(file)
-
-
-class KeyState(Enum):
-    UNUSED = 1
-    PRESENT = 2
-    CORRECT = 3
-    WRONG = 4
 
 
 class Wordle:
