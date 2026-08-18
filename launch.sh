@@ -3,7 +3,7 @@
 source set_env.sh
 
 # List of valid game names
-valid_games=("wordle" "hangman")
+valid_games=("wordle" "hangman" "imposter")
 
 # Function to display help information
 show_help() {
@@ -51,4 +51,6 @@ if [ $game_name == "wordle" ]; then
 elif [ $game_name == "hangman" ]; then
     # echo "Not yet implemented... Play wordle?"
     python ./games/hangman.py
+elif [ $game_name == "imposter" ]; then
+    python ./games/imposter.py
 fi

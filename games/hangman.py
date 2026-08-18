@@ -113,14 +113,19 @@ class Hangman:
 
             correct = 0
 
-            print(f" "*7, end="")
-
             if player_guess in self.word:
-                self.keys[player_guess] = KeyState.CORRECT
+                if self.keys[player_guess] == KeyState.CORRECT:
+                    print(f"You already guessed this letter!")
+                else:
+                    self.keys[player_guess] = KeyState.CORRECT
             else:
-                self.keys[player_guess] = KeyState.WRONG
-                tries += 1
-                
+                if self.keys[player_guess] == KeyState.WRONG:
+                    print(f"You already guessed this letter and it was not in the word!")
+                else:
+                    self.keys[player_guess] = KeyState.WRONG
+                    tries += 1
+            
+            print(f" "*7, end="")
 
             for i in range(len(self.word)):
                 if self.keys[self.word[i]] == KeyState.CORRECT:
@@ -139,7 +144,7 @@ class Hangman:
         print("="*self.game_width)
         
         if success:
-            print(f"{bcolors.OKGREEN}Congratulations! The word was {self.word}. You got it in {tries} tries.{bcolors.ENDC}")
+            print(f"{bcolors.OKGREEN}Congratulations! The word was {self.word}. You got it with {tries} incorrect tries.{bcolors.ENDC}")
         else:
             print(f"{bcolors.FAIL}Womp womp... The word was {self.word}.{bcolors.ENDC}")
 
